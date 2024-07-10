@@ -15,9 +15,8 @@ RUN apk add gnupg
 WORKDIR /root
 
 COPY init.el /root/.emacs.d/
-COPY entrypoint.sh /
 
-RUN chmod +x /entrypoint.sh
+COPY --chmod=777 entrypoint.sh /
 
 ENTRYPOINT [ "/entrypoint.sh" ]
 CMD [ "emacs" ]
