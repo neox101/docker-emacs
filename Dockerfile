@@ -16,7 +16,7 @@ WORKDIR /root
 
 COPY init.el /root/.emacs.d/
 
-COPY --chmod=777 entrypoint.sh /
+COPY --chown=1000:1000 --chmod=777 entrypoint.sh /
 
-ENTRYPOINT [ "/entrypoint.sh" ]
+ENTRYPOINT [ "sh", "/entrypoint.sh" ]
 CMD [ "emacs" ]
