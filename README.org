@@ -1,0 +1,38 @@
+
+* Docker image for Emacs on Alpine Linux
+# Docker image: [[https://hub.docker.com/repository/docker/neox101/emacs/builds][Docker Build]]
+
+*TODO* Put Docker Image Link.
+
+Emacs from Alpine community repository with MELPA setting.
+
+- Alpine Linux v3.11
+- Emacs v26.3
+
+* How to use this image
+#+begin_src sh
+docker run -it iquiw/alpine-emacs
+#+end_src
+
+
+* Environment Variables
+
+** `EMACS_PACKAGES`
+
+This variable specifies space separated list of packages.
+They are installed automatically when the container is executed.
+
+
+* Favicon
+Get free favicon from:
+https://www.favicon.cc
+
+
+* Build on docker
+Go to : 
+and click on Trigger.
+
+* REF:
+https://github.com/iquiw/docker-alpine-emacs
+
+
