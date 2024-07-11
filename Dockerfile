@@ -1,4 +1,4 @@
-FROM alpine:3.17
+FROM alpine:3.12
 
 MAINTAINER Iku Iwasa "iku.iwasa@gmail.com"
 
@@ -15,8 +15,7 @@ RUN apk add gnupg
 WORKDIR /root
 
 COPY init.el /root/.emacs.d/
+COPY entrypoint.sh /
 
-COPY --chown=1000:1000 --chmod=777 entrypoint.sh /
-
-ENTRYPOINT [ "sh", "/entrypoint.sh" ]
+ENTRYPOINT [ "/entrypoint.sh" ]
 CMD [ "emacs" ]

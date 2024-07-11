@@ -1,8 +1,6 @@
 
 * Docker image for Emacs on Alpine Linux
-# Docker image: [[https://hub.docker.com/repository/docker/neox101/emacs/builds][Docker Build]]
-
-*TODO* Put Docker Image Link.
+Docker image: [[https://hub.docker.com/repository/docker/neox101/emacs-image/builds][Docker Build]]
 
 Emacs from Alpine community repository with MELPA setting.
 
