@@ -17,5 +17,9 @@ WORKDIR /root
 COPY init.el /root/.emacs.d/
 COPY entrypoint.sh /
 
+RUN ls -lrt /
+RUN chmod +x entrypoint.sh
+RUN ls -lrt /
+
 ENTRYPOINT [ "/entrypoint.sh" ]
 CMD [ "emacs" ]
