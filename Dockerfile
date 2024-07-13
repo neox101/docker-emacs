@@ -1,4 +1,4 @@
-FROM alpine:3.19
+FROM alpine:3.13
 # FROM alpine:3.12
 
 MAINTAINER Iku Iwasa "iku.iwasa@gmail.com"
