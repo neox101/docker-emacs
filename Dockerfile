@@ -15,7 +15,7 @@ RUN ls -lrt /usr/bin/
 RUN apk add wget
 RUN ls -lrt /usr/bin/
 RUN apk add rclone
-RUN ls -lrt /bin/bin/
+RUN ls -lrt /usr/bin/
 
 # RUN apk add gcc
 # RUN apk add make
