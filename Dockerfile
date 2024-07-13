@@ -7,7 +7,6 @@ RUN apk update && apk upgrade
 # RUN apk add ca-certificates
 
 RUN apk add emacs
-RUN which emacs
 RUN apk add coreutils
 
 RUN apk add gnupg
@@ -15,6 +14,8 @@ RUN apk add wget
 RUN ls -lrt /bin/
 RUN apk add rclone
 RUN ls -lrt /bin/
+RUN find /bin/ -type f 
+RUN find /usr/ -type f 
 # RUN apk add gcc
 # RUN apk add make
 # RUN apk add g++
