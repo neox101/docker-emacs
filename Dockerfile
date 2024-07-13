@@ -13,11 +13,11 @@ RUN apk add coreutils
 
 RUN apk add gnupg
 
-RUN apk git
-RUN apk wget
-RUN apk graphviz
-RUN apk python3-pip
-RUN apk texlive-full
+RUN apk add git
+RUN apk add wget
+RUN apk add graphviz
+RUN apk add python3-pip
+RUN apk add texlive-full
 
 
 WORKDIR /root
