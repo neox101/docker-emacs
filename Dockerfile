@@ -1,11 +1,9 @@
-FROM alpine:3.20.1
+FROM alpine:3.20
 
 MAINTAINER Iku Iwasa "iku.iwasa@gmail.com"
 
 RUN apk update && apk upgrade
-
-# RUN apk add ca-certificates
-
+RUN apk add ca-certificates
 RUN apk add emacs
 RUN apk add coreutils
 RUN apk add gnupg
