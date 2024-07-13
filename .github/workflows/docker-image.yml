@@ -1,3 +1,4 @@
+
 name: Docker Image CI
 
 on:
@@ -5,19 +6,18 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
+    
 jobs:
 
   build:
-
+  
     runs-on: ubuntu-latest
-
+    
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: |
-       echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "neox101" --password-stdin
-      docker build . --file Dockerfile --tag neox101/emacs-image:v1 
-       echo "Build Success!"
-      docker push neox101/emacs-image:v1 
-
+      - uses: actions/checkout@v2
+      - name: Build the Docker image
+        run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "neox101"--password-stdin
+          docker build . --file Dockerfile --tag neox101/emacs-image:v1
+          echo "Build Success!"
+          docker push neox101/emacs-image:v1
