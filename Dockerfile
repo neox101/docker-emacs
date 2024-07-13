@@ -3,7 +3,8 @@ FROM alpine:3.12
 MAINTAINER Iku Iwasa "iku.iwasa@gmail.com"
 
 RUN apk update && apk upgrade
-RUN apk add ca-certificates emacs
+RUN apk add ca-certificates
+RUN apk add emacs==29.0
 RUN apk add gcc make g++ zlib-dev
 RUN apk search sqlite
 RUN apk add sqlite
