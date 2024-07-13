@@ -1,4 +1,5 @@
-FROM alpine:3.20.1
+# FROM alpine:3.20.1
+FROM alpine:3.12
 
 MAINTAINER Iku Iwasa "iku.iwasa@gmail.com"
 
@@ -17,8 +18,7 @@ WORKDIR /root
 COPY init.el /root/.emacs.d/
 COPY --chmod=777 entrypoint.sh /
 
-RUN ls -lrt /
-RUN ls -lrt /bin/
-
+# RUN ls -lrt /
+# RUN ls -lrt /bin/
 ENTRYPOINT [ "/entrypoint.sh" ]
 CMD [ "emacs" ]
