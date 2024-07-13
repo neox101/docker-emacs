@@ -6,7 +6,9 @@ RUN apk update && apk upgrade
 RUN apk add ca-certificates
 RUN apk add emacs
 RUN apk add gcc make g++ zlib-dev
-RUN apk search sqlite
+
+# sqlite
+# RUN apk search sqlite
 RUN apk add sqlite
 
 RUN apk add coreutils
@@ -36,7 +38,8 @@ RUN apk add texlive
 # RUN pip3 install --no-cache --upgrade pip setuptools
 
 # Rclone
-RUN apk search rclone
+# RUN apk search rclone
+RUN apk add rclone
 
 WORKDIR /root
 
