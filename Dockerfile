@@ -19,8 +19,13 @@ RUN apk add rclone
 
 WORKDIR /root
 
+RUN ls /root/.emacs.d/
 COPY init.el /root/.emacs.d/
+RUN ls /root/.emacs.d/
+
 COPY --chmod=777 entrypoint.sh /
+
+COPY publish.tar.gpg /root/
 
 # RUN ls -lrt /
 # RUN ls -lrt /bin/
