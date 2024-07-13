@@ -16,6 +16,7 @@ RUN apk add coreutils
 
 RUN apk add gnupg
 RUN apk add rclone
+RUN apk add git
 
 WORKDIR /root
 
