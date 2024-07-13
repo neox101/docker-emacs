@@ -19,7 +19,7 @@ RUN apk add rclone
 
 WORKDIR /root
 
-RUN ls /root/.emacs.d/
+RUN mkdir /root/.emacs.d/
 COPY init.el /root/.emacs.d/
 RUN ls /root/.emacs.d/
 
