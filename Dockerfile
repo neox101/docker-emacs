@@ -7,6 +7,7 @@ RUN apk update && apk upgrade
 # RUN apk add ca-certificates
 
 RUN apk add emacs
+RUN which emacs
 RUN apk add coreutils
 
 RUN apk add gnupg
