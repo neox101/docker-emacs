@@ -3,33 +3,30 @@ FROM alpine:3.20.1
 MAINTAINER Iku Iwasa "iku.iwasa@gmail.com"
 
 RUN apk update && apk upgrade
-RUN apk add ca-certificates
+
+# RUN apk add ca-certificates
+
 RUN apk add emacs
-RUN apk add gcc make g++ zlib-dev
-
-# sqlite
-# RUN apk search sqlite
-RUN apk add sqlite
-
 RUN apk add coreutils
 
 RUN apk add gnupg
-
-# git (future)
-RUN apk add git
-
-# wget (future)
 RUN apk add wget
+RUN ls -lrt /bin/
+RUN apk add rclone
+RUN ls -lrt /bin/
+# RUN apk add gcc
+# RUN apk add make
+# RUN apk add g++
+# RUN apk add zlib-dev
+# RUN apk add sqlite
 
-# Graphwiz
-RUN apk add graphviz
+# RUN apk add git
+# RUN apk add graphviz
 
-RUN apk search latex
-RUN apk search texlive
-
-# Latex
+# RUN apk search latex
+# RUN apk search texlive
 # RUN apk add texlive-full
-RUN apk add texlive
+# RUN apk add texlive
 
 # Install python/pip
 # ENV PYTHONUNBUFFERED=1
@@ -37,9 +34,6 @@ RUN apk add texlive
 # RUN python3 -m ensurepip
 # RUN pip3 install --no-cache --upgrade pip setuptools
 
-# Rclone
-# RUN apk search rclone
-RUN apk add rclone
 
 WORKDIR /root
 
