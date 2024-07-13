@@ -16,7 +16,6 @@ RUN apk add gnupg
 RUN apk add git
 RUN apk add wget
 RUN apk add graphviz
-RUN apk add python3-pip
 RUN apk add texlive-full
 
 
