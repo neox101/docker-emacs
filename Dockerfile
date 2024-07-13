@@ -22,6 +22,9 @@ RUN apk add gnupg
 # Graphwiz
 # RUN apk add graphviz
 
+RUN apk search latex
+RUN apk search texlive
+
 # Latex
 # Package                    Archives  Disk Space
 # -------------------------  --------  ----------
