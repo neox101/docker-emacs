@@ -18,6 +18,6 @@ jobs:
       - name: Build the Docker image
         run: |
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "neox101" --password-stdin
-          docker build . --file Dockerfile --tag neox101/emacs-image:v18
+          docker build . --file Dockerfile --tag neox101/emacs-image:v19
           echo "Build Success!"
-          docker push neox101/emacs-image:v18
+          docker push neox101/emacs-image:v19

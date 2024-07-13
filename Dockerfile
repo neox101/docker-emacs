@@ -12,7 +12,11 @@ RUN apk add --no-cache \
             gnupg \
             openssh-client \
             wget
+            
+RUN ls /nix-emacs/nix/store
 COPY --from=0 /nix-emacs/nix/store /nix/store
+RUN ls /nix/store
+RUN ls /nix/store/emacs/bin
 ENV PATH="/nix/store/emacs/bin:$PATH"
 
 
