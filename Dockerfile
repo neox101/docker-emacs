@@ -12,6 +12,7 @@ RUN apk add sqlite
 RUN apk add coreutils
 
 RUN apk add gnupg
+RUN apk add rclone
 
 WORKDIR /root
 
