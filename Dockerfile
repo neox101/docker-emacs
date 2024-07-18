@@ -8,8 +8,8 @@ MAINTAINER Iku Iwasa "iku.iwasa@gmail.com"
 RUN apk update && apk upgrade
 
 RUN apk add ca-certificates
-# RUN apk add emacs
-RUN apk add --no-cache emacs
+RUN apk add emacs
+# RUN apk add --no-cache emacs
 
 RUN apk add gcc make g++ zlib-dev
 RUN apk search sqlite
