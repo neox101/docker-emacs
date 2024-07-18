@@ -1,5 +1,5 @@
-FROM alpine:3.20
-# FROM alpine:3.14
+FROM alpine:3.14
+# FROM alpine:3.20
 # FROM alpine:3.13
 # FROM alpine:3.12
 
