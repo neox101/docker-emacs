@@ -43,12 +43,16 @@ RUN apk add emacs
 
 
 # Debugging
-RUN find / -name emacs
-RUN ls -lrt /usr/bin/
 RUN echo $PATH
-RUN /usr/bin/emacs --version || true
-RUN which emacs
 
+RUN find / -name emacs
+RUN apk info -L emacs
+
+RUN ls -lrt /usr/lib/emacs
+RUN ls -lrt /usr/bin/emacs
+
+# RUN /usr/bin/emacs --version || true
+# RUN which emacs
 # RUN ls -lrt /
 # RUN ls -lrt /bin/
 
