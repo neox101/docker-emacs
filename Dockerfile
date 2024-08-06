@@ -35,21 +35,35 @@ RUN which git
 
 
 
-# below line working with alpine:3.14
-RUN apk add emacs
-# below line may work with alpine:3.20
-# RUN apk add --no-cache emacs
-
-
-
-# Debugging
+# Path
 RUN echo PATH=$PATH
 
-RUN find / -name emacs
+# Before installation:
 RUN apk info -L emacs
+RUN find / -name emacs
 
-RUN ls -lrt /usr/lib/emacs
-RUN ls -lrt /usr/bin/emacs
+# search Emacs
+RUN apk search emacs
+# below line working with alpine:3.14
+RUN apk add emacs
+
+# After installation:
+RUN apk info -L emacs
+RUN find / -name emacs
+
+
+
+
+# verify package integrity
+RUN apk del emacs && apk add --no-cache emacs
+
+# Before installation 2:
+RUN apk info -L emacs
+RUN find / -name emacs
+
+
+# RUN ls -lrt /usr/lib/emacs
+# RUN ls -lrt /usr/bin/emacs
 
 # RUN /usr/bin/emacs --version || true
 # RUN which emacs
