@@ -43,8 +43,11 @@ COPY --chmod=777 entrypoint.sh /
 
 COPY publish.tar.gpg /root/
 
-RUN ls -lrt /
-RUN ls -lrt /bin/
-RUN which emacs
+# RUN ls -lrt /
+# RUN ls -lrt /bin/
+# RUN which emacs
+
+
+
 ENTRYPOINT [ "/entrypoint.sh" ]
 CMD [ "emacs" ]
