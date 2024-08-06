@@ -61,6 +61,9 @@ RUN apk del emacs && apk add --no-cache emacs
 RUN apk info -L emacs
 RUN find / -name emacs
 
+RUN /usr/share/emacs --version || true
+
+RUN ln -s /usr/share/emacs /usr/bin/emacs
 
 # RUN ls -lrt /usr/lib/emacs
 # RUN ls -lrt /usr/bin/emacs
