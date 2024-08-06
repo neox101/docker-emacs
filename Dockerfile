@@ -43,7 +43,7 @@ RUN apk add emacs
 
 
 # Debugging
-RUN echo $PATH
+RUN echo PATH=$PATH
 
 RUN find / -name emacs
 RUN apk info -L emacs
