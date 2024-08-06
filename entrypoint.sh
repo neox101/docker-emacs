@@ -6,6 +6,10 @@ EMACS_INIT_FILE=$EMACS_DIR/init.el
 
 echo "inside entry point."
 
+which git
+which emacs
+
+
 if [ "$1" = emacs -a ! -d "$EMACS_ELPA_DIR" -a -n "$EMACS_PACKAGES" ]; then
 	cat > /tmp/melpa.el <<EOF
 (require 'package)
