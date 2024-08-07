@@ -6,10 +6,8 @@ EMACS_INIT_FILE=$EMACS_DIR/init.el
 
 echo "inside entry point."
 
-# which git
+which git
 ls -lrt /usr/bin/
-
-
 ls -lrt /usr/share/
 # which emacs
 

@@ -51,6 +51,9 @@ RUN ls -lrt /var/games/emacs
 # Test if emacs can be found and is executable
 RUN /usr/bin/emacs --version || true
 
+RUN /usr/lib/emacs --version || true
+RUN /usr/share/emacs --version || true
+RUN /var/games/emacs --version || true
 
 
 ###### Effort 1
