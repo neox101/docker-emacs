@@ -1,5 +1,5 @@
 
-alpine:3.14
+FROM alpine:3.14
 
 MAINTAINER Iku Iwasa "iku.iwasa@gmail.com"
 
