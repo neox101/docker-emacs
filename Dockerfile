@@ -29,16 +29,35 @@ RUN apk add git
 RUN which git
 
 
+
+# https://github.com/Silex/docker-emacs/blob/master/29.3/alpine/Dockerfile
+FROM nixos/nix
+
+ADD https://api.github.com/repos/purcell/nix-emacs-ci/git/refs/heads/master /tmp/cache
+RUN echo 'extra-experimental-features = flakes nix-command' >> /etc/nix/nix.conf
+RUN nix profile install --impure --accept-flake-config "github:purcell/nix-emacs-ci#emacs-29-3"
+RUN nix copy --no-require-sigs --to /nix-emacs $(type -p emacs)
+RUN cd /nix-emacs/nix/store && ln -s *emacs* emacs
+
+FROM alpine:3.14
+
+RUN apk add --no-cache \
+            curl \
+            gnupg \
+            openssh-client \
+            wget
+
+COPY --from=0 /nix-emacs/nix/store /nix/store
+ENV PATH="/nix/store/emacs/bin:$PATH"
+
+
+
 # ###### Effort 3
-FROM silex/emacs:25.1
-
-RUN apk add --no-cache git make
-
+# FROM silex/emacs:25.1
+# RUN apk add --no-cache git make
 # RUN apt-get update && \
 #     apt-get install -y git make && \
 #     rm -rf /var/lib/apt/lists/*
-
-
 
 # ###### Effort 2
 # # Install Emacs
