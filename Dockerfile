@@ -34,44 +34,60 @@ RUN apk add git
 RUN which git
 
 
-
-# Path
-RUN echo PATH=$PATH
-
-# Before installation:
-RUN apk info -L emacs
-RUN find / -name emacs
-
-# search Emacs
-RUN apk search emacs
-# below line working with alpine:3.14
 RUN apk add emacs
 
-# After installation:
+# Debugging
 RUN apk info -L emacs
 RUN find / -name emacs
+RUN ls -lrt /usr/lib/emacs
+RUN ls -lrt /usr/share/emacs
+RUN ls -lrt /var/games/emacs
+
+# Create symlink if necessary
+# Uncomment if you find emacs in a different location
+# RUN ln -s /path/to/found/emacs /usr/bin/emacs
+
+# Test if emacs can be found and is executable
+RUN /usr/bin/emacs --version || true
 
 
-
-
-# verify package integrity
-RUN apk del emacs && apk add --no-cache emacs
-
-# Before installation 2:
-RUN apk info -L emacs
-RUN find / -name emacs
-
-RUN /usr/share/emacs --version || true
-
-RUN ln -s /usr/share/emacs /usr/bin/emacs
-
-# RUN ls -lrt /usr/lib/emacs
-# RUN ls -lrt /usr/bin/emacs
-
-# RUN /usr/bin/emacs --version || true
-# RUN which emacs
-# RUN ls -lrt /
-# RUN ls -lrt /bin/
+###### Effort 1
+# RUN echo PATH=$PATH
+# 
+# # Before installation:
+# RUN apk info -L emacs
+# RUN find / -name emacs
+# 
+# # search Emacs
+# RUN apk search emacs
+# # below line working with alpine:3.14
+# RUN apk add emacs
+# 
+# # After installation:
+# RUN apk info -L emacs
+# RUN find / -name emacs
+# 
+# 
+# 
+# 
+# # verify package integrity
+# RUN apk del emacs && apk add --no-cache emacs
+# 
+# # Before installation 2:
+# RUN apk info -L emacs
+# RUN find / -name emacs
+# 
+# RUN /usr/share/emacs --version || true
+# 
+# RUN ln -s /usr/share/emacs /usr/bin/emacs
+# 
+# # RUN ls -lrt /usr/lib/emacs
+# # RUN ls -lrt /usr/bin/emacs
+# 
+# # RUN /usr/bin/emacs --version || true
+# # RUN which emacs
+# # RUN ls -lrt /
+# # RUN ls -lrt /bin/
 
 
 
