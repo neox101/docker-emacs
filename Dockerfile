@@ -22,7 +22,7 @@ RUN apk add rclone
 RUN apk add git
 
 RUN apk add emacs
-
+RUN /usr/bin/emacs --version || true
 
 # create .emacs.d
 WORKDIR /root
