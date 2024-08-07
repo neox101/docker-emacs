@@ -23,9 +23,6 @@ RUN apk add gnupg
 
 RUN apk add rclone
 
-
-
-
 RUN apk add git
 # RUN apk add --no-cache git
 # Debugging
@@ -35,7 +32,7 @@ RUN which git
 # ###### Effort 3
 FROM silex/emacs:25.1
 
-RUN apk add --no-cache git make emacs
+RUN apk add --no-cache git make
 
 # RUN apt-get update && \
 #     apt-get install -y git make && \
