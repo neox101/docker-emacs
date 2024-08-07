@@ -33,8 +33,9 @@ RUN apk add git
 # Debugging
 RUN which git
 
-
-RUN apk add emacs
+###### Effort 2
+# Install Emacs
+RUN apk add --no-cache emacs
 
 # Debugging
 RUN apk info -L emacs
@@ -49,6 +50,7 @@ RUN ls -lrt /var/games/emacs
 
 # Test if emacs can be found and is executable
 RUN /usr/bin/emacs --version || true
+
 
 
 ###### Effort 1
