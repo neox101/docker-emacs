@@ -5,9 +5,7 @@
 # alpine3.20 gives emacs 29 
 FROM alpine:3.20
 
-
 MAINTAINER Iku Iwasa "iku.iwasa@gmail.com"
-
 
 RUN apk update && apk upgrade
 
@@ -33,27 +31,37 @@ RUN apk add git
 # Debugging
 RUN which git
 
-###### Effort 2
-# Install Emacs
-RUN apk add --no-cache emacs
 
-# Debugging
-RUN apk info -L emacs
-RUN find / -name emacs
-RUN ls -lrt /usr/lib/emacs
-RUN ls -lrt /usr/share/emacs
-RUN ls -lrt /var/games/emacs
+# ###### Effort 3
+FROM silex/emacs:25.1
 
+RUN apk add --no-cache git make emacs
+
+# RUN apt-get update && \
+#     apt-get install -y git make && \
+#     rm -rf /var/lib/apt/lists/*
+
+
+
+# ###### Effort 2
+# # Install Emacs
+# RUN apk add --no-cache emacs
+# 
+# # Debugging
+# RUN apk info -L emacs
+# RUN find / -name emacs
+# RUN ls -lrt /usr/lib/emacs
+# RUN ls -lrt /usr/share/emacs
+# RUN ls -lrt /var/games/emacs
 # Create symlink if necessary
 # Uncomment if you find emacs in a different location
 # RUN ln -s /path/to/found/emacs /usr/bin/emacs
-
 # Test if emacs can be found and is executable
-RUN /usr/bin/emacs --version || true
-
-RUN /usr/lib/emacs --version || true
-RUN /usr/share/emacs --version || true
-RUN /var/games/emacs --version || true
+# RUN /usr/bin/emacs --version || true
+# 
+# RUN /usr/lib/emacs --version || true
+# RUN /usr/share/emacs --version || true
+# RUN /var/games/emacs --version || true
 
 
 ###### Effort 1
