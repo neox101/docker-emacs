@@ -44,7 +44,7 @@ WORKDIR /tmp
 RUN wget https://ftp.gnu.org/gnu/emacs/emacs-30.1.tar.gz && \
     tar -xzf emacs-30.1.tar.gz && \
     cd emacs-30.1 && \
-    ./configure --with-native-compilation --with-json --with-modules --with-x-toolkit=no && \
+    ./configure --without-native-compilation --with-json --with-modules --with-x-toolkit=no && \
     make -j$(nproc) && \
     make install
 
